@@ -145,7 +145,7 @@ function exclaimFour(str) {
 }
 
 // console.log('arrow')
-// console.log('declaration')
+ console.log('declaration')
 // console.log('expression')
 
 
@@ -159,7 +159,18 @@ function exclaimFour(str) {
 */
 
 //CODE HERE
+function nameCheck(name){
+  if (name === `Steven`){
+    return 'What is up Steven?';
+  } else if (name === Bryan){
+    return 'Hey Bryan!';
+  } else {
+    return `Cool name ${name}`
+  }
+}
 
+
+let nameGreeting = nameCheck('Steven') 
 
 ////////////////// PROBLEM 11 ////////////////////
 /*
@@ -172,8 +183,18 @@ function exclaimFour(str) {
 */
 
 //CODE HERE
-
-
+function faveColorFinder(color){
+  if (color === 'red'){
+    return `red is a great color`;
+  } else if (color === 'green'){
+    return `green is a solid favorite color`;
+  } else if (color === `black`){
+    return 'so trendy';
+  } else {
+    return `you need to evaluate your favorite color choice`;
+  }
+}
+let colorRating = faveColorFinder(`red`);
 ////////////////// PROBLEM 12 ////////////////////
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 /*
@@ -183,10 +204,12 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-function printAllNames(){
-  
+function printAllNames(names){
+  for (let i = 0; i < namesArr.length; i++){
+    console.log(names[i]);
+  }
 }
-
+printAllNames(namesArr);
 ////////////////// PROBLEM 13 ////////////////////
 /*
   Create a function called thatsOdd that takes in a single argument (a number).
@@ -196,8 +219,14 @@ function printAllNames(){
 */
 
 //CODE HERE
-
-
+function thatsOdd(num){
+  if (num % 2 === 0){
+    return `That's not odd!`
+  } else {
+    return `That is odd indeed!`
+  }
+}
+let oddChecker = thatsOdd(2);
 ////////////////// PROBLEM 14 ////////////////////
 
 /*
@@ -209,7 +238,7 @@ function printAllNames(){
 */
 
 //CODE HERE
-
+function bestMovie = (title) => `${title} is the best movie ever!`
 
 ////////////////// PROBLEM 15 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
@@ -223,8 +252,17 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
-
-
+function bigOrSmall(arr){
+  let answers = [];
+  for (let i = 0; i < arr.length; i++){
+    if (arr > 100){
+      answers.push('big');
+    } else (arr <= 100){
+      answers.push('small');
+    } return answers; 
+  } 
+}
+let arrayEvaluator = bigOrSmall(bigOrSmallArray);
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
 let loser = 'Glimmer'
@@ -234,7 +272,13 @@ let loser = 'Glimmer'
 */
 
 //CODE HERE
-
+function theEliminator(contestants, loser){
+  for (let i = 0; i < contestants.length; i++){
+    if (contestants[i] === loser){
+      contenstants.splice(i, 1)
+    }
+  } return contestants
+}
 
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
@@ -244,8 +288,10 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
-
-
+function makeUppercase(str){
+  console.log(str.toUpperCase());
+}
+makeUppercase(sampleString)
 ////////////////// PROBLEM 18 ////////////////////
 /*
   Write a function called emailCheck that takes in
@@ -256,7 +302,14 @@ let sampleString = "Hi, my name is Kylo."
   If it does, return 'email verified' and if doesn't, 
   return 'must provide a valid email address'
 */
-
+function emailCheck(email){
+ email = String(email).trim();
+ if (email.includes('@')){
+  return 'email verified'
+ } else {
+  return 'must provide a valid email address'
+ }
+}
 ////////////////// PROBLEM 19 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
@@ -264,16 +317,21 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
-
-
+function froggies(gold){
+  return gold / 3;
+}
+let totalFrogs = froggies();
 ////////////////// PROBLEM 20 ////////////////////
 /*
   You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
 */
 
 //CODE HERE
-
-
+function froggies2(gold){
+  let totalFrogs2 = Math.floor(gold / 3);
+  return totalFrogs2;
+}
+let totalFrogs2 = froggies();
 ////////////////// PROBLEM 21 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 /*
@@ -281,8 +339,16 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 */
 
 //CODE HERE
-
-
+function ascendingArr(arr){
+for(let i = 0; i < arr.length; i++){
+  if (arr[i] > arr[i +1]){
+    return false;
+  } else{
+    return true;
+  }
+}
+}
+let arrayIsAscending = ascendingArr(sampleArray)
 ////////////////// PROBLEM 22 ////////////////////
 
 let duck = "cute";
@@ -305,13 +371,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ["duck"]
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ["duck", "rubberDuck"]
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ["duck", "rubberDuck", "sailorDuck"]
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ["duck", "realDuck"]
